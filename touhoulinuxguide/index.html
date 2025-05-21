@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>Touhou Linux Guide</title>
+<body>
+<h1>Touhou Linux Guide</h1>
+<h2>By Daichungus</h2>
+<p id="last-updated"></p>
+<script>
+  document.getElementById("last-updated").textContent = "Last updated at " + document.lastModified;
+</script>
+<hr class="light">
+<h2>Choosing a distro</h2>
+<p>For this guide, I am using Fedora 42 with KDE, and have tested this process on Ubuntu with GNOME, 
+    but most major distros should work with this guide as well.</p>
+<h2>Installing required software</h2>
+    <ol>
+        <li>Update your repository using your distro's included package manager.</li>
+        <li>If not already included, install flatpak and add the flathub repo.</li>
+        <li>Install Wine and Lutris.</li>
+        <li>Using flatpak, install ProtonUp-Qt.</li>
+        <li>Open ProtonUp-Qt to install ProtonGE to the Lutris.</li>
+    </ol>
+<hr class="light">
+<h2>Adding and running the Touhou games</h2>
+    <h3>Running vanilla Touhou</h3>
+    <p>This is if you want to play without THCRAP patches.</p>
+    <ol>
+        <li>Open Lutris, then add "locally installed game".</li>
+        <li>Enter the game name. Choose Wine as the Runner.</li>
+        <li>Locate your game's exe (usually thXX.exe except for EoSD) for the executable path. This will also work for vpatch executables.</li>
+        <li>Set the working directory path to be the same window the game is located in.</li>
+        <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
+        <li>For Runner options, I usually use the System wine.</li>
+        <li>Save</li>
+    </ol>
+    <h3>Running with THCRAP patches.</h3>
+    <p>Make sure to launch the game in Lutris to ensure it works correctly.</p>
+<hr class="light">
+<p>NOTE: While vpatch is not required for reducing input lag, it's useful for resizing the window.</p>
+</body>
+</html>
