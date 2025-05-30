@@ -8,42 +8,83 @@
 <script>
   document.getElementById("last-updated").textContent = "Last updated at " + document.lastModified;
 </script>
+<h2>This is a work-in-progress!</h2>
 <hr class="light">
+<h1>Setup</h1>
 <h2>Choosing a distro</h2>
-<p>For this guide, I am using Fedora 42 with KDE, and have tested this process on Ubuntu with GNOME, 
-    but most major distros should work with this guide as well.</p>
+    <p>Most major distros should work well with this guide.</p>
+    <p>I use Fedora 42 with KDE for my personal setup, and have tested this process on Ubuntu 24.04 LTS with GNOME.</p>
+    <p>My only recommendation is to choose a well-known, widely-supported, and stable distro, which includes but is not limited to the following:</p>
+    <ul>
+        <li><a href="https://linuxmint.com/">Linux Mint</a></li>
+        <li><a href="https://ubuntu.com/desktop">Ubuntu</a></li>
+        <li><a href="https://fedoraproject.org/">Fedora</a></li>
+        <li><a href="https://www.debian.org/">Debian</a></li>
+    </ul>
+    <h3>NOTE: This guide does not cover Arch Linux!</h3>
 <h2>Installing required software</h2>
     <ol>
-        <li>Update your repository using your distro's included package manager.</li>
-        <li>If not already included, install flatpak and add the flathub repo.</li>
-        <li>Install Wine and Lutris.</li>
-        <li>Using flatpak, install ProtonUp-Qt.</li>
-        <li>Open ProtonUp-Qt to install ProtonGE to the Lutris.</li>
+        <li>Update your repository using your distro's included package manager.
+            <p><b>Debian/Ubuntu/Linux Mint: </b><code>sudo apt update && sudo apt upgrade</code></p>
+            <p><b>Fedora: </b><code>sudo dnf update</code></p>
+        </li>
+        <li>If not already included, <a href="https://flathub.org/setup">install flatpak and add the flathub repo.</a></li>
+        <li>Install Wine and Lutris.
+            <p><b>Debian/Ubuntu/Linux Mint: </b><code>sudo apt install wine lutris</code></p>
+            <p><b>Fedora: </b><code>sudo dnf install wine lutris</code></p>
+        </li>
+        <li>Using flatpak, <a href="https://flathub.org/apps/net.davidotek.pupgui2">install ProtonUp-Qt.</a></li>
+        <li>Open ProtonUp-Qt to install ProtonGE to Lutris.</li>
     </ol>
 <hr class="light">
-<h2>Adding and running the Touhou games</h2>
-    <h3>Running vanilla Touhou</h3>
-    <p>This is if you want to play without THCRAP patches.</p>
+<h1>Installing THCRAP patches</h1>
+    <h3>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP installed.</h3>
+<hr class="light">
+<h1>Adding and running the Touhou games</h1>
+    <h2>Running vanilla Touhou</h2>
+    <p>Read this if you want to play without THCRAP patches or vpatch.</p>
     <ol>
         <li>Open Lutris, then add "locally installed game".</li>
         <li>Enter the game name. Choose Wine as the Runner.</li>
-        <li>Locate your game's exe (usually thXX.exe except for EoSD) for the executable path. This will also work for vpatch executables.</li>
-        <li>Set the working directory path to be the same window the game is located in.</li>
+        <li>Locate your game's exe (usually thXX.exe) for the executable path.</li>
+        <li>Set the working directory path to be the same folder the game is located in.</li>
         <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
-        <li>For Runner options, I usually use the System wine.</li>
+        <li>For Runner options, I usually use System wine.</li>
         <li>Press the save button and ensure your game is running.</li>
     </ol>
-    <h3>Running with THCRAP patches</h3>
+    <h3>Running Touhou with vpatch</h3>
+    <p>Read this if you want to play with vpatch.</p>
+    <p><b>NOTE: The executable of EoSD should be renamed to <code>東方紅魔郷.exe</code></b></p>
+    <p><b>NOTE:</b> While vpatch is not required for reducing input lag on Linux, it allows you to resize the game window, and allows you to adjust the speed of replays.</p>
     <ol>
-        <li>Repeat the same steps above, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
+        <li>Repeat the same first few steps as running vanilla Touhou.</li>
+        <li>Locate <code>vpatch.exe</code> for the executable path. The executable, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> file should be in the same directory as the game you want to add.</li>
+        <li>Continue with the same steps as running vanilla Touhou.</li>
+        <li>Press the save button and ensure your game is running. If you changed the window size in <code>vpatch.ini</code>, the game's window should be that size.</li>
+    </ol>
+    <h3>Running with existing THCRAP patches</h3>
+    <p>Read this if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
+    <ol>
+        <li>Repeat the same steps as running vanilla Touhou, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
         <li>
-            <p>In the Arguments box, enter the <code>.js</code> file of your patch and the game you want to run it with.</p>
-            <p>Example: <code>en.js th06</code> for running the English patch of EoSD.</p>
+            <p>In the Arguments field, enter the <code>.js</code> file of your patch and the name game you want to run it with. 
+            You can find all of your installed patches in the <code>config/</code> subfolder of your <code>thcrap/</code> folder.</p>
+            <p>Example: <code>en.js th06</code> for EoSD with the English patch.</p>
         </li>
-        <li>Make sure the working directory is the folder that contains <code>thcrap_loader.exe</code> (it should usually be named <code>thcrap/</code></li>
-        <li>Press the save button and ensure your game is running. There should be a small window that has the name "Touhou Community Reliant Automatic Patcher". If your game loads with the patcher, you've succeeded.</li>
+        <li>Ensure the working directory is the folder that contains <code>thcrap_loader.exe</code>.</li>
+        <li>Press the save button and ensure your game is running. There should be a small window that has the name "Touhou Community Reliant Automatic Patcher".</li>
+        <li>If your game loads with your desired patch, you've succeeded.</li>
     </ol>
 <hr class="light">
-<p>NOTE: While vpatch is not required for reducing input lag, it's useful for resizing the window.</p>
+<h1>Additional Resources</h1>
+    <ul>
+        <li><a href="https://en.touhouwiki.net/wiki/Running_in_Linux_and_macOS">Touhou Wiki guide</a></li>
+        <li><a href="https://wiki.archlinux.org/title/Touhou">ArchWiki guide</a></li>
+        <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Wine_tips">Touhou Patch Center: Wine tips</a></li>
+        <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">General THCRAP guide</a></li>
+        <li><a href="https://github.com/scriptkitties/fglt/blob/master/_guides/playing-zun-touhou-games-on-gnu-linux-with-wine.md">scriptkitties guide (Uses Arch and PlayOnLinux)</a></li>
+        <li><a href="https://hisouten.koumakan.jp/wiki/Linux_support">Guide to running Hisoutensoku</a></li>
+        <li><a href="https://touhouprojects.com/emulators/wine/">Directly using Wine to run Touhou games</a></li>
+    </ul>
 </body>
 </html>
