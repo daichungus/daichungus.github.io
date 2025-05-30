@@ -26,20 +26,52 @@
 <h2>Installing required software</h2>
     <ol>
         <li>Update your repository using your distro's included package manager.
-            <p><b>Debian/Ubuntu/Linux Mint: </b><code>sudo apt update && sudo apt upgrade</code></p>
-            <p><b>Fedora: </b><code>sudo dnf update</code></p>
+            <p><b>Debian/Ubuntu/Linux Mint: </b></p>
+            <p><code>sudo apt update && sudo apt upgrade</code></p>
+            <p><b>Fedora: </b></p>
+            <p><code>sudo dnf update</code></p>
         </li>
         <li>If not already included, <a href="https://flathub.org/setup">install flatpak and add the flathub repo.</a></li>
         <li>Install Wine and Lutris.
-            <p><b>Debian/Ubuntu/Linux Mint: </b><code>sudo apt install wine lutris</code></p>
-            <p><b>Fedora: </b><code>sudo dnf install wine lutris</code></p>
+            <p><b>Debian/Ubuntu/Linux Mint: </b></p>
+            <p><code>sudo apt install wine lutris</code></p>
+            <p><b>Fedora: </b></p>
+            <p><code>sudo dnf install wine lutris</code></p>
         </li>
         <li>Using flatpak, <a href="https://flathub.org/apps/net.davidotek.pupgui2">install ProtonUp-Qt.</a></li>
         <li>Open ProtonUp-Qt to install ProtonGE to Lutris.</li>
     </ol>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
-    <h3>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP installed.</h3>
+    <h3>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed.</h3>
+    <p><b>IMPORTANT NOTE: </b><code>thcrap_loader.exe</code> is the actual program that applies patches to the Touhou games,
+        while <code>thcrap.exe</code> is the THCRAP configuration tool, which allows you to download new patches and locate the 
+        games.
+    </p>
+    <h2>Installation and setup</h2>
+    <ol>
+        <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">Download the main THCRAP package from thpatch.net</a></li>
+        <li>Unzip the package. There are two ways to do this:</li>
+        <ul>
+            <li>Use a GUI-based archive manager. Usually included with your distro. (Ark, File Roller, Engrampa, etc.)</li>
+            <li>Use the <code>unzip</code> command. You may have to install it with your package manager. An example  of the command in use is shown below:
+                <p><code>unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></p>
+            </li>
+        </ul>
+        <li>THCRAP's nature allows you be to patch any Touhou game in any location. However, I <b> highly recommend placing the thcrap folder in the same location as your Touhou games.</b></li>
+        <li>Open Lutris, then add "locally installed game".</li>
+        <li>You can set the name to be whatever you want, but "THCRAP configuration" is enough. Choose Wine as the Runner.</li>
+        <li>Locate <code>thcrap.exe</code> for the executable path. (NOT <code>thcrap_loader.exe</code>!).</li>
+        <li>Set the working directory path to be the same folder <code>thcrap.exe</code> is located in.</li>
+        <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
+        <li>Do not use System wine for the Runner option. Choose GE-Proton.</li>
+        <li>Press the save button and ensure the THCRAP configuration tool runs properly.</li>
+    </ol>
+    <p><b>NOTE: </b>if you want to run the THCRAP configuration tool with regular Wine, you have to install Mono to your Wine prefix. 
+        This is because the THCRAP configuration tool depends on the .NET framework. Mono is the Linux equivalent of it. 
+        <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
+        However, due to the rather complex nature of setting up Mono as of writing, GE-Proton is recommended for most users in this guide.
+    </p>
 <hr class="light">
 <h1>Adding and running the Touhou games</h1>
     <h2>Running vanilla Touhou</h2>
@@ -50,7 +82,7 @@
         <li>Locate your game's exe (usually thXX.exe) for the executable path.</li>
         <li>Set the working directory path to be the same folder the game is located in.</li>
         <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
-        <li>For Runner options, I usually use System wine.</li>
+        <li>For Runner options, use System wine.</li>
         <li>Press the save button and ensure your game is running.</li>
     </ol>
     <h3>Running Touhou with vpatch</h3>
