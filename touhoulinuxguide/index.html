@@ -8,7 +8,7 @@
 <script>
   document.getElementById("last-updated").textContent = "Last updated at " + document.lastModified;
 </script>
-<!--<a href="/touhoulinuxguide/pc98.html">PC-98 Touhou Linux Guide</a>-->
+<!--<a href="./pc98.html">PC-98 Touhou Linux Guide</a>-->
 <h2>This is a work-in-progress!</h2>
 <hr class="light">
 <h1>Setup</h1>
@@ -48,7 +48,12 @@
         while <code>thcrap.exe</code> is the THCRAP configuration tool, which allows you to download new patches and locate the 
         games.
     </p>
-    <h2>Installation and setup</h2>
+    <p><b>NOTE: </b>if you want to run the THCRAP configuration tool with regular Wine, you have to install Mono to your Wine prefix. 
+        This is because the THCRAP configuration tool depends on the .NET framework. Mono is the Linux equivalent of it. 
+        <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
+        However, due to the rather complex nature of setting up Mono as of writing, GE-Proton is recommended for most users in this guide.
+    </p>
+    <h2>Setup of the THCRAP configuration tool</h2>
     <ol>
         <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">Download the main THCRAP package from thpatch.net</a></li>
         <li>Unzip the package. There are two ways to do this:</li>
@@ -67,11 +72,40 @@
         <li>Do not use System wine for the Runner option. Choose GE-Proton.</li>
         <li>Press the save button and ensure the THCRAP configuration tool runs properly.</li>
     </ol>
-    <p><b>NOTE: </b>if you want to run the THCRAP configuration tool with regular Wine, you have to install Mono to your Wine prefix. 
-        This is because the THCRAP configuration tool depends on the .NET framework. Mono is the Linux equivalent of it. 
-        <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
-        However, due to the rather complex nature of setting up Mono as of writing, GE-Proton is recommended for most users in this guide.
-    </p>
+    <h2>Installing patches with the THCRAP configuation tool</h2>
+    <ol>
+        <li>Run the THCRAP configuration tool via Lutris.</li>
+        <li>On the welcome screen, click next. By default, THCRAP will ask you to choose a patch based on your system's default language (most likely English).</li>
+        <li>You can install multiple patches at the same time in the "All patches" tab. More detailed information can be found <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download#Setup_Instructions">here.</a>
+            You can also set the "Config name" as you desire. More on that later.
+        </li>
+        <li>THCRAP will then ask you for the location of your games.
+            <ol>
+                <li>Select the "Find games in a specific folder" option.</li>
+                <li>Navigate to the folder containing your Touhou games. The path should be something like 
+                    <p><code>/home/yourname/Games/Touhou</code></p>
+                </li>
+                <li>THCRAP will then load a list of detected Touhou games and their settings program (<code>custom.exe</code>).</li>
+                <li>Select the games you want to apply the patch to. Click Next.</li>
+            </ol>
+        </li>
+        <li>You will be prompted to create a shortcut for the game in various possible locations. Choose the most convenient one for you.</li>
+        <li>A shortcut for that patch will be created.
+            <p>NOTE: This shortcut is purely optional, as what actually matters is the config file created for that patch. You can delete the shortcut if desired.</p>
+        </li>
+        <li>Run the shortcut with Wine, or skip to the "Running with existing THCRAP patches" section</li>
+    </ol>
+    <h2>Understanding and editing the config files</h2>
+    <p>Config files tell <code>thcrap_loader.exe</code> which patches to load in order. These are located in the <code><b>config</b></code> folder of the <code><b>thcrap</b></code> folder ending with <code><b>.js</b></code></p>
+    <p>All config files must follow a strict JSON format. An example for <code>en.js</code> is <a href="./patch_config_example.txt">provided here</a>.</p>
+    <p>The listed patches follow a top-down order. Lower listed patches will stack on the above listed patches.</p>
+    <p>If you have already have installed a few patches, this can be very useful for multi-patch loading.</p>
+        <h3>About games.js</h3>
+        <p><code>games.js</code> is a special config file compared to the other ones. This file basically lists all the locations of your Touhou games for THCRAP to find.</p>
+        <p>An example is <a href="./games_example.txt">provided here.</a></p>
+        <p>If you have <code>vpatch.exe</code> in any of the games' folders (see "Running Touhou with Vsync patches"), you can refer to that instead of the regular game exe.</p>
+        <p>It's best practice to refer the locations of the games via relative paths. This allows portability and less hassle compared to absolute paths. (hence the earlier recommendation of placing thcrap in the same folder as the games)</p>
+        <p></p>
 <hr class="light">
 <h1>Adding and running the Touhou games</h1>
     <h2>Running vanilla Touhou</h2>
@@ -101,7 +135,7 @@
         <li>Repeat the same steps as running vanilla Touhou, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
         <li>
             <p>In the Arguments field, enter the <code>.js</code> file of your patch and the name of the game you want to run it with. 
-            You can find all of your installed patches and game locations in the <code>config/</code> subfolder of your <code>thcrap/</code> folder.</p>
+            You can find all of your installed patches and game locations in the <code>config</code> folder of your <code>thcrap</code> folder.</p>
             <p>Example: <code>en.js th06</code> for EoSD with the English patch.</p>
         </li>
         <li>Ensure the working directory is the folder that contains <code>thcrap_loader.exe</code>.</li>
@@ -118,6 +152,7 @@
         <li><a href="https://github.com/scriptkitties/fglt/blob/master/_guides/playing-zun-touhou-games-on-gnu-linux-with-wine.md">scriptkitties guide (Uses Arch and PlayOnLinux)</a></li>
         <li><a href="https://hisouten.koumakan.jp/wiki/Linux_support">Guide to running Hisoutensoku</a></li>
         <li><a href="https://touhouprojects.com/emulators/wine/">Directly using Wine to run Touhou games</a></li>
+        <li><a href="https://lilyremigia.moe/installtouhou/">lilyremigia's guide on running THCRAP</a></li>
     </ul>
 </body>
 </html>
