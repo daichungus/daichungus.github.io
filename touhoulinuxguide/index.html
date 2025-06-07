@@ -22,7 +22,7 @@
         <li><a href="https://fedoraproject.org/">Fedora</a></li>
         <li><a href="https://www.debian.org/">Debian</a></li>
     </ul>
-    <h3>NOTE: This guide does not cover Arch Linux!</h3>
+    <h3>NOTE: This guide does NOT cover Arch Linux!</h3>
 <h2>Installing required software</h2>
     <ol>
         <li>Update your repository using your distro's included package manager.
@@ -70,6 +70,7 @@
         <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
     </p>
     <h2>Setup of the THCRAP configuration tool</h2>
+    <b>NOTE:</b> THCRAP's nature allows you be to patch any Touhou game in any location. However, it is <b style="color:red">highly recommended that the thcrap folder should be placed in the same location as your Touhou games.</b>
     <ol>
         <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">Download the main THCRAP package from thpatch.net</a></li>
         <li>Unzip the package. There are two ways to do this:</li>
@@ -79,8 +80,7 @@
                 <p><code>unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></p>
             </li>
         </ul>
-        <li>THCRAP's nature allows you be to patch any Touhou game in any location. However, I <b> highly recommend placing the thcrap folder in the same location as your Touhou games.</b></li>
-        <li>Open Lutris, then add "locally installed game".</li>
+        <li>Open Lutris, then add "locally installed game" with the "+" sign in the upper-left corner.</li>
         <li>You can set the name to be whatever you want, but "THCRAP configuration" is enough. Choose Wine as the Runner.</li>
         <li>Locate <code>thcrap.exe</code> for the executable path. (NOT <code>thcrap_loader.exe</code>!).</li>
         <li>Set the working directory path to be the same folder <code>thcrap.exe</code> is located in.</li>
