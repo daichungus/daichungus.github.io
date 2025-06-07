@@ -31,15 +31,13 @@
             <p><b>Fedora: </b></p>
             <p><code>sudo dnf update</code></p>
         </li>
-        <li>If not already included, <a href="https://flathub.org/setup">install flatpak and add the flathub repo.</a></li>
+        <!--<li>If not already included, <a href="https://flathub.org/setup">install flatpak and add the flathub repo.</a></li>-->
         <li>Install Wine and Lutris.
             <p><b>Debian/Ubuntu/Linux Mint: </b></p>
             <p><code>sudo apt install wine lutris</code></p>
             <p><b>Fedora: </b></p>
             <p><code>sudo dnf install wine lutris</code></p>
         </li>
-        <li>Using flatpak, <a href="https://flathub.org/apps/net.davidotek.pupgui2">install ProtonUp-Qt.</a></li>
-        <li>Open ProtonUp-Qt to install ProtonGE to Lutris.</li>
     </ol>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
@@ -51,10 +49,8 @@
     <p><b>NOTE: </b>if you want to run the THCRAP configuration tool with regular Wine, you have to install Mono to your Wine prefix. 
         This is because the THCRAP configuration tool depends on the .NET framework. Mono is the Linux equivalent of it. 
         <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
-        However, due to the rather complex nature of setting up Mono as of writing, GE-Proton is recommended for most users in this guide.
     </p>
     <h2>Setup of the THCRAP configuration tool</h2>
-    <h2 style="color:red">WARNING: THIS MAY CAUSE YOUR TOUHOU GAMES TO NOT LAUNCH PROPERLY WITHOUT A SYSTEM REBOOT.</h2>
     <ol>
         <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">Download the main THCRAP package from thpatch.net</a></li>
         <li>Unzip the package. There are two ways to do this:</li>
@@ -69,7 +65,11 @@
         <li>You can set the name to be whatever you want, but "THCRAP configuration" is enough. Choose Wine as the Runner.</li>
         <li>Locate <code>thcrap.exe</code> for the executable path. (NOT <code>thcrap_loader.exe</code>!).</li>
         <li>Set the working directory path to be the same folder <code>thcrap.exe</code> is located in.</li>
-        <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
+        <li>Create a new Wine prefix with the following command. You can name it whatever you want other than <code>.wine</code>, but I highly recommend something memorable such as <code>.wine64</code> or <code>.wine-thcrap</code>
+            <p><code><b>WINEPREFIX=~/.wine64 WINEARCH=win64 winecfg</b></code></p>
+        </li>
+        <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide to find the version you need.</a></li>
+        <li>Locate your newly Wine prefix.
         <li>Do not use System wine for the Runner option. Choose GE-Proton.</li>
         <li>Press the save button and ensure the THCRAP configuration tool runs properly.</li>
     </ol>
