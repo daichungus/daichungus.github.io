@@ -45,22 +45,19 @@
         <li>Create a new Wine prefix with the following command. You can name it whatever you want other than <code>.wine</code>, but I highly recommend something memorable such as <code>.wine-thcrap</code>
             <p><code>WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></p>
         </li>
-        <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
+        <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono*. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
         <li>Run the following command to install Mono to your newly-created prefix:
             <p><code>WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></p>
             <p>(substitute the actual version number for <code>VERSION</code>)</p>
         </li>
     </ol>
+    <p>*The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will only display a bright pink window before closing itself.</p>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
     <h3>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed.</h3>
     <p><b>IMPORTANT NOTE: </b><code>thcrap_loader.exe</code> is the actual program that applies patches to the Touhou games,
         while <code>thcrap.exe</code> is the THCRAP configuration tool, which allows you to download new patches and locate the 
         games.
-    </p>
-    <p><b>NOTE: </b>if you want to run the THCRAP configuration tool with regular Wine, you have to install Mono to your Wine prefix. 
-        This is because the THCRAP configuration tool depends on the .NET framework. Mono is the Linux equivalent of it. 
-        <b>Without Mono, the THCRAP configuration tool will only display a bright pink window before closing itself.</b>
     </p>
     <h2>Setup of the THCRAP configuration tool</h2>
     <b>NOTE:</b> THCRAP's nature allows you be to patch any Touhou game in any location. However, it is <b style="color:red">highly recommended that the thcrap folder should be placed in the same location as your Touhou games.</b>
