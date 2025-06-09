@@ -17,7 +17,7 @@
 <hr class="light">
 <h1>Setup</h1>
 <h2>Choosing a distro</h2>
-    <p>Most major distros should work well with this guide.</p>
+    <p>Most major distros* should work well with this guide.</p>
     <p>I use Fedora 42 with KDE for my personal setup, and have tested this process on Ubuntu 24.04 LTS with GNOME.</p>
     <p>My only recommendation is to choose a well-known, widely-supported, and stable distro, which includes but is not limited to the following:</p>
     <ul>
@@ -26,8 +26,9 @@
         <li><a href="https://fedoraproject.org/">Fedora</a></li>
         <li><a href="https://www.debian.org/">Debian</a></li>
     </ul>
-    <h3>NOTE: This guide does NOT cover Arch Linux!</h3>
+    <b>* This guide does NOT cover Arch Linux!</b>
 <h2>Installing required software</h2>
+    <p>If you have just installed your distro, please install all necessary drivers for your machine before continuing.</p>
     <ol>
         <li>Update your repository using your distro's included package manager.
             <p><b>Debian/Ubuntu/Linux Mint: </b></p>
@@ -58,7 +59,8 @@
     <p>* The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will only display a bright pink window before closing itself.</p>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
-    <h3>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed.</h3>
+    <b>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed and do not want to install more.</b>
+    <p>If your Touhou game folders each have their own thcrap folders and English exe, it is recommended to delete them and follow this section.</p>
     <h2>Setup of the THCRAP configuration tool</h2>
     <ol>
         <li>Download the main <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download"> THCRAP package from thpatch.net</a></li>
@@ -94,18 +96,18 @@
     <h2>Installing patches with the THCRAP configuration tool</h2>
     <ol>
         <li>Run the THCRAP configuration tool via Lutris.</li>
-        <li>On the welcome screen, click next. By default, THCRAP will ask you to choose a patch based on your system's default language</li>
-        <li>Click on the "All patches" tab* to: 
+        <li>On the welcome screen, click next. By default, THCRAP will ask you to choose a patch based on your system's default language.</li>
+        <li>Click on the "All patches" tab* if you want to: 
             <ul>
                 <li>Install multiple patches at the same time</li>
                 <li>Install non-language patches (music, sprite, gameplay)</li>
                 <li>More detailed information can be <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download#Setup_Instructions">found here.</a></li>
             </ul>
         </li>
-        <li>THCRAP will ask you for the location of your games<b style="color:red"><sup>†</sup></b>.
+        <li>THCRAP will then ask you for the location of your games<b style="color:red"><sup>†</sup></b> after you click "next".
             <ol>
                 <li>Select the "Find games in a specific folder" option.</li>
-                <li>Navigate to the folder containing your Touhou games. The path should be something like <code>/home/yourname/Games/Touhou</code>
+                <li>Navigate to the folder containing your Touhou games.
                 </li>
                 <li>THCRAP will then load a list of detected Touhou games and their custom.exe programs.</li>
                 <li>Select the games you want to apply the patch to. Click Next.</li>
