@@ -100,11 +100,11 @@
     <p><sup>†</sup> This shortcut is purely optional, as what actually matters is the config file created for that patch. You can delete the shortcut if desired.</p>
     <h2>Understanding and editing the config files</h2>
         <p>Config files tell <code>thcrap_loader.exe</code> which patches to load in order. These are located in the <code>config</code> folder of the <code>thcrap</code> folder ending with <code>.js</code></p>
-        <p>All config files must follow a strict format. An example for <code>en.js</code> is <a href="./patch_config_example.txt">provided here</a>.</p>
+        <p>All config files must follow a strict top-down format. An example for <code>en.js</code> is <a href="./patch_config_example.js">provided here</a>.</p>
         <p>If you have already have installed a few patches, this can be very useful for <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:About#Patch_stacking">patch stacking</a>.</p>
         <h3>About games.js</h3>
-            <p><code>games.js</code> is a special config file compared to the other ones. This file basically lists all the locations of your Touhou games for THCRAP to find.</p>
-            <p>A good example is <a href="./games_example.txt">provided here.</a></p>
+            <p><code>games.js</code> is a special config file. This file tells THCRAP all the known locations of your Touhou games.</p>
+            <p>An example with explanation comments is <a href="./games_example.js">provided here.</a></p>
             <p>If you have <code>vpatch.exe</code> in any of the games' folders (see "Running Touhou with Vsync patches"), you can refer to that instead of the regular game exe.</p>
             <p>It's best practice to refer the locations of the games via relative paths. This allows portability and less hassle compared to absolute paths. (hence the earlier recommendation of placing thcrap in the same folder as the games)</p>
 <hr class="light">
