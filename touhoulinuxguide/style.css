@@ -1,8 +1,55 @@
+/* Light mode */
+body {
+  background-color: aliceblue;
+  color: black;
+  /*
+  font-size: 1rem;
+  max-width: 70ch;
+  margin: auto;
+  padding: 1rem;
+  */
+  font-family: system-ui, sans-serif, Georgia, serif;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
 code {
-    display: inline-block;   /* or 'block' if you want it on its own line */
+    display: inline-block;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 1px 2px;
     border-radius: 4px;
     font-family: monospace;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: white;
+  }
+  
+  a:link {
+    color: #82aaff;
+  }
+
+  a:visited {
+    color: #c792ea;
+  }
+
+  a:hover {
+    color: #add8ff; 
+  }
+
+  code {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: white;
+  }
 }
