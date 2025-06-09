@@ -41,22 +41,15 @@
     </ol>
     <h2>Setting up Wine for THCRAP</h2>
     <p>You can skip this section if you do not plan on using THCRAP to download additional patches.</p>
-    <p>NOTE: There will be warnings about using a 64-bit architecture prefix. Ignore them, or create a 32-bit prefix instead.</p>
     <ol>
         <li>Create a new Wine prefix with the following command. You can name it whatever you want other than <code>.wine</code>, but I highly recommend something memorable such as <code>.wine-thcrap</code>
             <p><code>WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></p>
         </li>
-        <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need. You can also use Step 5 to check the version of Mono there.</li>
-        <li>Launch winetricks for your new prefix with this command:
-            <p><code>WINEPREFIX=~/.wine-thcrap winetricks</code></p>
+        <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
+        <li>Run the following command to install Mono to your newly-created prefix:
+            <p><code>WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></p>
+            <p>(substitute the actual version number for <code>VERSION</code>)</p>
         </li>
-        <li>Once a window with the name "Winetricks - choose a wineprefix" appears, select "Select the default wineprefix" and press OK. Ensure the selected prefix is your created prefix.</li>
-        <li>Select "Run uninstaller" and press OK.</li>
-        <li>If there is already Wine Mono Runtime, remove it.</li>
-        <li>"Install..." -> Location of your Mono <code>.msi</code> installer program -> Open</li>
-        <li>Patiently wait until Mono has been fully installed.</li>
-        <li>Exit the uninstaller.</li>
-        <li>Cancel all Winetrick windows that pop up to entirely exit winetricks.</li>
     </ol>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
