@@ -42,7 +42,7 @@
     <h2>Setting up Wine for THCRAP</h2>
     <p>You can skip this section if you do not plan on using THCRAP to download additional patches.</p>
     <ol>
-        <li>Create a new Wine prefix with the following command. You can name it whatever you want other than <code>.wine</code>, but I highly recommend something memorable such as <code>.wine-thcrap</code>
+        <li>Create a new Wine prefix with the following command:
             <p><code>WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></p>
         </li>
         <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono*. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
@@ -61,15 +61,26 @@
         <li>Unzip the package. There are two ways to do this:</li>
         <ul>
             <li>Use a GUI-based archive manager. Usually included with your distro. (Ark, File Roller, Engrampa, etc.)</li>
-            <li>Use the <code>unzip</code> command. You may have to install it with your package manager. An example  of the command in use is shown below:
+            <li>Use the <code>unzip</code> command. You may have to install it with your package manager. An example command in use is shown below:
                 <p><code>unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></p>
             </li>
         </ul>
-        <li>Open Lutris, then add "locally installed game" with the "+" sign in the upper-left corner.</li>
-        <li>You can set the name to be whatever you want, but "THCRAP configuration" is enough. Choose Wine as the Runner.</li>
-        <li>Locate <code>thcrap.exe</code>* for the executable path..</li>
-        <li>Set the working directory path to be the same folder <code>thcrap.exe</code> is located in.</li>
-        <li>Locate your newly created Wine prefix from the previous setup section.
+        <li>Open Lutris, click "+" sign in the upper-left corner, then choose "Add locally installed game"</li>
+        <li>In the Game Info tab:
+            <ol>
+                <li>Set a name like "THCRAP configuration tool".</li>
+                <li>Choose Wine as the Runner.</li>
+            </ol>
+        </li>
+        <li>In the Game options tab:
+            <ol>
+                <li>Set the executable path to <code>/your/path/to/thcrap/thcrap.exe</code> *</li>
+                <li>Set the working directory path to <code>/your/path/to/thcrap/</code></li>
+                <li>Set the Wine prefix path to <code>~/.wine-thcrap</code></li>
+            </ol>
+        </li>
+        
+
         <li>Use System wine for the Runner option.</li>
         <li>Press the save button and ensure the THCRAP configuration tool runs properly.</li>
     </ol>
