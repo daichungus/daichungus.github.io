@@ -105,10 +105,9 @@
         <li>THCRAP will ask you for the location of your games<b style="color:red"><sup>†</sup></b>.
             <ol>
                 <li>Select the "Find games in a specific folder" option.</li>
-                <li>Navigate to the folder containing your Touhou games. The path should be something like 
-                    <p><code>/home/yourname/Games/Touhou</code></p>
+                <li>Navigate to the folder containing your Touhou games. The path should be something like <code>/home/yourname/Games/Touhou</code>
                 </li>
-                <li>THCRAP will then load a list of detected Touhou games and their settings program (<code>custom.exe</code>).</li>
+                <li>THCRAP will then load a list of detected Touhou games and their custom.exe programs.</li>
                 <li>Select the games you want to apply the patch to. Click Next.</li>
             </ol>
         </li>
@@ -129,39 +128,53 @@
 <hr class="light">
 <h1>Adding and running the Touhou games</h1>
     <h2>Running vanilla Touhou</h2>
-    <p>Read this if you want to play without THCRAP patches or vpatch.</p>
+    <p>Follow this section if you want to play without THCRAP patches or vpatch.</p>
     <ol>
         <li>Open Lutris, then add "locally installed game".</li>
-        <li>Enter the game name. Choose Wine as the Runner.</li>
-        <li>Locate your game's exe (usually thXX.exe) for the executable path.</li>
-        <li>Set the working directory path to be the same folder the game is located in.</li>
-        <li>Locate your Wine prefix. Usually this is located as <code>~/.wine</code></li>
+        <li>In the Game info tab:
+            <ol>
+                <li>Set the name to be the Touhou game's name.</li>
+                <li>Choose Wine as the Runner.</li>
+            </ol>
+        </li>
+        <li>In the Game options tab:
+            <ol>
+                <li>Set the executable path to <code>/your/path/to/thXX/thXX.exe</code>.</li>
+                <li>Set the working directory path to <code>/your/path/to/thXX/</code>.</li>
+                <li>Set the Wine prefix path to <code>~/.wine</code></li>
+            </ol>
+        </li>
         <li>For Runner options, use System wine.</li>
         <li>Press the save button and ensure your game is running.</li>
     </ol>
     <h2>Running Touhou with Vsync patches</h2>
-    <p>Read this if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a>.</p>
-    <p><b>NOTE: The executable of EoSD should be renamed to <code>東方紅魔郷.exe</code></b></p>
-    <p><b>NOTE:</b> While Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
+    <p>Follow this section if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a> <b>WITHOUT THCRAP PATCHES</b>.</p>
+    <p>While Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
     <ol>
         <li>Repeat the same first few steps as running vanilla Touhou.</li>
-        <li>Locate <code>vpatch.exe</code> for the executable path. The executable, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> file should be in the same directory as the game you want to add.</li>
+        <li>Locate <code>vpatch.exe</code>* for the executable path. The executable, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> file should be in the same directory as the game you want to add.</li>
         <li>Continue with the same steps as running vanilla Touhou.</li>
         <li>Press the save button and ensure your game is running. If you changed the window size in <code>vpatch.ini</code>, the game's window should be that size.</li>
     </ol>
+    <p>* The vanilla exe of EoSD should be renamed to <code>東方紅魔郷.exe</code> for <code>vpatch.exe</code> to work properly</p>
     <h2>Running with existing THCRAP patches</h2>
-    <p>Read this if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
+    <p>Follow this section if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
     <ol>
         <li>Repeat the same steps as running vanilla Touhou, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
         <li>
-            <p>In the Arguments field, enter the <code>.js</code> file of your patch and the name of the game you want to run it with. 
-            You can find all of your installed patches and game locations in the <code>config</code> folder of your <code>thcrap</code> folder.</p>
+            <p>In the Arguments field, enter the <code>.js</code> file of your patch* and the game<sup>†</sup> you want to run it with. 
             <p>Example: <code>en.js th06</code> for EoSD with the English patch.</p>
         </li>
         <li>Ensure the working directory is the folder that contains <code>thcrap_loader.exe</code>.</li>
-        <li>Press the save button and ensure your game is running. There should be a small window that has the name "Touhou Community Reliant Automatic Patcher".</li>
-        <li>If your game loads with your desired patch, you've succeeded.</li>
+        <li>Press the save button and run your game for testing.
+            <ul>
+                <li>There should be a small window that has the name "Touhou Community Reliant Automatic Patcher".</li></li>
+                <li>If your game loads with your desired patch, you've succeeded.</li>
+            </ul>
+        </li>
     </ol>
+    <p>* You can find all of your installed patches in the <code>config</code> folder in the <code>thcrap</code> folder.</p></p>
+    <p><sup>†</sup> Game names are located in the <code>config</code> folder in the <code>thcrap</code> folder</p>
 <hr class="light">
 <h1>Post-Setup Tweaks</h1>
 <i>This section is under construction.</i>
