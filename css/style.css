@@ -2,7 +2,7 @@
 body {
   background-color: aliceblue;
   color: black;
-  font-family: system-ui, sans-serif, Georgia, serif;
+  font-family: system-ui, sans-serif, Georgia, 'Times New Roman', Times, serif;
   /*
   font-size: 1rem;
   max-width: 70ch;
@@ -52,4 +52,9 @@ code {
     border: 1px solid #444;
     color: white;
   }
+}
+
+/* Serif override for PC-98 guide */
+.serif-page {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
