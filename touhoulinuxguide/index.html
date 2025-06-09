@@ -79,11 +79,15 @@
     <h2>Installing patches with the THCRAP configuration tool</h2>
     <ol>
         <li>Run the THCRAP configuration tool via Lutris.</li>
-        <li>On the welcome screen, click next. (By default, THCRAP will ask you to choose a patch based on your system's default language)</li>
-        <li>You can install multiple patches at the same time, install non-language patches, and set a custom config name in the "All patches" tab. More detailed information can be found <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download#Setup_Instructions">here.</a>
-            <p>Note: It may take a few seconds for patches to load when you click on the "All patches" tab. This is normal behavior.</p>
+        <li>On the welcome screen, click next. By default, THCRAP will ask you to choose a patch based on your system's default language</li>
+        <li>Click on the "All patches" tab* to: 
+            <ul>
+                <li>Install multiple patches at the same time</li>
+                <li>Install non-language patches (music, sprite, gameplay)</li>
+                <li>More detailed information can be <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download#Setup_Instructions">found here.</a></li>
+            </ul>
         </li>
-        <li>THCRAP will ask you for the location of your games<b style="color:red">*</b>.
+        <li>THCRAP will ask you for the location of your games<b style="color:red"><sup>†</sup></b>.
             <ol>
                 <li>Select the "Find games in a specific folder" option.</li>
                 <li>Navigate to the folder containing your Touhou games. The path should be something like 
@@ -93,11 +97,12 @@
                 <li>Select the games you want to apply the patch to. Click Next.</li>
             </ol>
         </li>
-        <li>Choose the most convenient location for the patch's shortcut<sup>†</sup> to be created in.</li>
+        <li>Choose the most convenient location for the patch's shortcut<sup>‡</sup> to be created in.</li>
         <li>Run the shortcut with Wine, or skip to the "Running with existing THCRAP patches" section</li>
     </ol>
-    <p><b style="color:red">* It is highly recommended that the thcrap folder should be placed in the same location as your Touhou games.</b></p>
-    <p><sup>†</sup> This shortcut is purely optional, as what actually matters is the config file created for that patch. You can delete the shortcut if desired.</p>
+    <p>* It may take a few seconds for patches to load when you click on the "All patches" tab. This is normal behavior.</p>
+    <p><b style="color:red"><sup>†</sup> It is highly recommended that the thcrap folder should be placed in the same location as your Touhou games.</b></p>
+    <p><sup>‡</sup> This shortcut is purely optional, as what actually matters is the config file created for that patch. You can delete the shortcut if desired.</p>
     <h2>Understanding and editing the config files</h2>
         <p>Config files tell <code>thcrap_loader.exe</code> which patches to load in order. These are located in the <code>config</code> folder of the <code>thcrap</code> folder ending with <code>.js</code></p>
         <p>All config files must follow a strict top-down format. An example for <code>en.js</code> is <a href="./patch_config_example.js">provided here</a>.</p>
@@ -105,8 +110,7 @@
         <h3>About games.js</h3>
             <p><code>games.js</code> is a special config file. This file tells THCRAP all the known locations of your Touhou games.</p>
             <p>An example with explanation comments is <a href="./games_example.js">provided here.</a></p>
-            <p>If you have <code>vpatch.exe</code> in any of the games' folders (see "Running Touhou with Vsync patches"), you can refer to that instead of the regular game exe.</p>
-            <p>It's best practice to refer the locations of the games via relative paths. This allows portability and less hassle compared to absolute paths. (hence the earlier recommendation of placing thcrap in the same folder as the games)</p>
+            <p>If you have <code>vpatch.exe</code> in any of the games' folders (see "Running Touhou with Vsync patches"), you can refer to that exe instead of the regular game exe within <code>games.js</code></p>
 <hr class="light">
 <h1>Adding and running the Touhou games</h1>
     <h2>Running vanilla Touhou</h2>
