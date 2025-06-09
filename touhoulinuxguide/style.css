@@ -1,0 +1,8 @@
+code {
+    display: inline-block;   /* or 'block' if you want it on its own line */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 1px 2px;
+    border-radius: 4px;
+    font-family: monospace;
+}
