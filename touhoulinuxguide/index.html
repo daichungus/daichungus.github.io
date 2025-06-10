@@ -39,8 +39,17 @@
             <p><b>Fedora:</b><pre><code class="block">sudo dnf install wine lutris</code></pre></p>
         </li>
     </ol>
+<hr class="light">
+<h1>Installing THCRAP patches</h1>
+    <b>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed and do not want to install more.</b>
+    <p>If your Touhou game folders each have their own thcrap folders and English exe, it is recommended to delete them and follow this section.</p>
+    <p>Please note the following:
+        <ul>
+            <li>Each <code>/your/path/to/</code> is a placeholder for where you installed the software.</li>
+            <li>Each <code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
+        </ul>
+    </p>
     <h2>Setting up Wine and Mono</h2>
-    <p>You can skip this section if you do not plan on using THCRAP to download additional patches.</p>
     <ol>
         <li>Create a new Wine prefix with the following command:
             <pre><code class="block">WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></pre>
@@ -54,16 +63,6 @@
     <p>* The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will display an error saying that .NET is missing.</p>
     <p><sup>†</sup> Directly installing Mono to the prefix avoids unforseen distro-related issues. 
         On some distros (namely Fedora), simply running THCRAP with Wine will cause it to only display a pink screen before closing itself.
-    </p>
-<hr class="light">
-<h1>Installing THCRAP patches</h1>
-    <b>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed and do not want to install more.</b>
-    <p>If your Touhou game folders each have their own thcrap folders and English exe, it is recommended to delete them and follow this section.</p>
-    <p>Please note the following:
-        <ul>
-            <li>Each <code>/your/path/to/</code> is a placeholder for where you installed the software.</li>
-            <li>Each <code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
-        </ul>
     </p>
     <h2>Setup of the THCRAP configuration tool</h2>
     <ol>
@@ -141,7 +140,7 @@
     <p>Please note the following:
         <ul>
             <li>Each <code>/your/path/to/</code> is a placeholder for where you installed the software.</li>
-            <li><code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
+            <li>Each <code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
         </ul>
     </p>
     <h2>Running vanilla Touhou</h2>
