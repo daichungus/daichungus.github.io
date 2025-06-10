@@ -31,28 +31,24 @@
     <p>If you have just installed your distro, please install all necessary drivers for your machine before continuing.</p>
     <ol>
         <li>Update your repository using your distro's included package manager.
-            <p><b>Debian/Ubuntu/Linux Mint: </b></p>
-            <p><code>sudo apt update && sudo apt upgrade</code></p>
-            <p><b>Fedora: </b></p>
-            <p><code>sudo dnf update</code></p>
+            <p><b>Debian/Ubuntu/Linux Mint:</b><pre><code class="block">sudo apt update && sudo apt upgrade</code></pre></p>
+            <p><b>Fedora:</b><pre><code class="block">sudo dnf update</code></pre></p>
         </li>
         <li>Install <a href="https://www.winehq.org/">Wine</a> and <a href="https://lutris.net/">Lutris</a>.
-            <p><b>Debian/Ubuntu/Linux Mint: </b></p>
-            <p><code>sudo apt install wine lutris</code></p>
-            <p><b>Fedora: </b></p>
-            <p><code>sudo dnf install wine lutris</code></p>
+            <p><b>Debian/Ubuntu/Linux Mint:</b><pre><code class="block">sudo apt install wine lutris</code></pre></p>
+            <p><b>Fedora:</b><pre><code class="block">sudo dnf install wine lutris</code></pre></p>
         </li>
     </ol>
-    <h2>Setting up Wine for THCRAP</h2>
+    <h2>Setting up Wine and Mono</h2>
     <p>You can skip this section if you do not plan on using THCRAP to download additional patches.</p>
     <ol>
         <li>Create a new Wine prefix with the following command:
-            <p><code>WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></p>
+            <pre><code class="block">WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></pre>
         </li>
         <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono*. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
         <li>Run the following command to install Mono to your newly-created prefix<sup>†</sup>:
-            <p><code>WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></p>
-            <p>(substitute the actual version number for <code>VERSION</code>)</p>
+            <pre><code class="block">WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></pre>
+            (substitute the actual version number for <code>VERSION</code>)
         </li>
     </ol>
     <p>* The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will display an error saying that .NET is missing.</p>
@@ -66,7 +62,7 @@
     <p>Please note the following:
         <ul>
             <li>Each <code>/your/path/to/</code> is a placeholder for where you installed the software.</li>
-            <li><code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
+            <li>Each <code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
         </ul>
     </p>
     <h2>Setup of the THCRAP configuration tool</h2>
@@ -76,7 +72,7 @@
         <ul>
             <li>Use a GUI-based archive manager. Usually included with your distro. (Ark, File Roller, Engrampa, etc.)</li>
             <li>Use the <code>unzip</code> command. You may have to install it with your package manager. An example command in use is shown below:
-                <p><code>unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></p>
+                <pre><code class="block">unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></pre>
             </li>
         </ul>
         <li>Open Lutris, click "+" sign in the upper-left corner, then choose "Add locally installed game"</li>
@@ -188,14 +184,20 @@
         <li>Continue with the same steps as running vanilla Touhou.</li>
         <li>Press the save button and ensure your game is running. If you changed the window size in <code>vpatch.ini</code>, the game's window should be that size.</li>
     </ol>
-    <p>* The vanilla exe of EoSD should be renamed to <code>東方紅魔郷.exe</code> for <code>vpatch.exe</code> to work properly</p>
+    <p>* The vanilla exe of EoSD should be renamed to <code class="blocksmall">東方紅魔郷.exe</code> for <code>vpatch.exe</code> to work properly</p>
     <h2>Running with existing THCRAP patches</h2>
     <p>Follow this section if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
     <ol>
         <li>Repeat the same steps as running vanilla Touhou, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
         <li>
             <p>In the Arguments field, enter the <code>.js</code> file of your patch* and the game<sup>†</sup> you want to run it with. 
-            <p>Example: <code>en.js th06</code> for EoSD with the English patch.</p>
+            <p>Examples of arguments: 
+                <ul>
+                    <li>EoSD with the English patch: <code class="blocksmall">en.js th06</code></li>
+                    <li>PCB with <a href="https://www.thpatch.net/wiki/Patch:Skipgame">Skipgame</a>: <code class="blocksmall">skipgame.js th07</code></li>
+                    <li>MoF with user-made config: <code class="blocksmall">yourpatch.js th10</code></li>
+                </ul>
+            </p>
         </li>
         <li>Ensure the working directory is the folder that contains <code>thcrap_loader.exe</code>.</li>
         <li>Press the save button and run your game for testing.
