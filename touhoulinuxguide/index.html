@@ -50,12 +50,15 @@
             <p><code>WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></p>
         </li>
         <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono*. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
-        <li>Run the following command to install Mono to your newly-created prefix:
+        <li>Run the following command to install Mono to your newly-created prefix<sup>†</sup>:
             <p><code>WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></p>
             <p>(substitute the actual version number for <code>VERSION</code>)</p>
         </li>
     </ol>
-    <p>* The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will only display a bright pink window before closing itself.</p>
+    <p>* The THCRAP configuration tool requires .NET, which Mono substitutes on Linux. Otherwise it will display an error saying that .NET is missing.</p>
+    <p><sup>†</sup> Directly installing Mono to the prefix avoids unforseen distro-related issues. 
+        On some distros (namely Fedora), simply running THCRAP with Wine will cause it to only display a pink screen before closing itself.
+    </p>
 <hr class="light">
 <h1>Installing THCRAP patches</h1>
     <b>Skip this section if you do not want to play with THCRAP patches, or if you already have THCRAP patches installed and do not want to install more.</b>
