@@ -30,12 +30,6 @@ a:visited {
   border: 1px solid #444;
 }
 
-.text {
-  font-family: monospace;
-  background-color: transparent;
-  color: inherit;
-}
-
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   body {
