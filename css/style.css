@@ -19,13 +19,21 @@ a:visited {
   color: purple;
 }
 
-code {
-    display: inline-block;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 1px 2px;
-    border-radius: 4px;
-    font-family: monospace;
+/* Code text classes */
+.block {
+  display: inline-block;
+  background-color: #f0f0f0;
+  font-family: monospace;
+  padding: 6px;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid #444;
+}
+
+.text {
+  font-family: monospace;
+  background-color: transparent;
+  color: inherit;
 }
 
 /* Dark mode */
@@ -48,33 +56,21 @@ code {
   }
 
   code {
-    background-color: #1e1e1e;
-    border: 1px solid #444;
     color: white;
+  }
+
+  .block {
+    display: inline-block;
+    background-color: #1e1e1e;
+    font-family: monospace;
+    padding: 6px;
+    border-radius: 6px;
+    overflow-x: auto;
+    border: 1px solid #444;
   }
 }
 
 /* Serif override for PC-98 guide */
 .serif-page {
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-/* Code text classes */
-.code-block {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  font-family: monospace;
-  padding: 10px;
-  border-radius: 6px;
-  overflow-x: auto;
-  margin: 1em 0;
-  border: 1px solid #444;
-}
-
-.code-text {
-  font-family: monospace;
-  background-color: transparent;
-  color: inherit;
-  padding: 0 2px;
-  font-size: 0.95em;
 }
