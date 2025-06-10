@@ -82,9 +82,14 @@ a:visited {
   }
 }
 
-/* Serif override for PC-98 guide */
-.serif-page {
+/* Serif override */
+.serif {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Classic boring HTML font */
+.classic {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* For last updated stuff */
