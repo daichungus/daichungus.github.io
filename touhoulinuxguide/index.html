@@ -152,7 +152,7 @@
                     <li>Each <code>XX</code> represents the numeral of the Touhou game, such as <code>06</code>. (e.g. th06 for EoSD)</li>
                 </ul>
             </p>
-            <h2>Running vanilla Touhou</h2>
+            <h2>Vanilla Touhou (no patches)</h2>
                 <p>Follow this section if you want to play without THCRAP patches or vpatch.</p>
                 <!--<h3>Using Lutris (easy and recommended for most users)</h3>-->
                 <ol>
@@ -173,9 +173,9 @@
                     <li>For Runner options, use System wine.</li>
                     <li>Press the save button and ensure your game is running.</li>
                 </ol>
-            <h2>Running Touhou with Vsync patches</h2>
-                <p>Follow this section if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a> <b>WITHOUT THCRAP PATCHES</b>.</p>
-                <p>While Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
+            <h2>Touhou with Vsync patch (vpatch)</h2>
+                <p>Follow this section if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a>.</p>
+                <p>Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
                 <ol>
                     <li>Repeat the same first few steps as running vanilla Touhou.</li>
                     <li>Locate <code>vpatch.exe</code>* for the executable path. The executable, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> file should be in the same directory as the game you want to add.</li>
@@ -183,19 +183,19 @@
                     <li>Press the save button and ensure your game is running. If you changed the window size in <code>vpatch.ini</code>, the game's window should be that size.</li>
                 </ol>
                 <p>* The vanilla exe of EoSD should be renamed to <code class="blocksmall">東方紅魔郷.exe</code> for <code>vpatch.exe</code> to work properly</p>
-                <h2>Running with existing THCRAP patches</h2>
-                    <p>Follow this section if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
+            <h2>Touhou with THCRAP patches</h2>
+                <p>Follow this section if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
                     <ol>
                         <li>Repeat the same steps as running vanilla Touhou, but for the executable path in Game options, locate <code>thcrap_loader.exe</code></li>
                         <li>
                             <p>In the Arguments field, enter the <code>.js</code> file of your patch* and the game<sup>†</sup> you want to run it with. 
                             <p>Examples of arguments: 
-                                <ul>
-                                    <li>EoSD with the English patch: <code class="blocksmall">en.js th06</code></li>
-                                    <li>PCB with <a href="https://www.thpatch.net/wiki/Patch:Skipgame">Skipgame</a>: <code class="blocksmall">skipgame.js th07</code></li>
-                                    <li>MoF with user-made config: <code class="blocksmall">yourpatch.js th10</code></li>
-                                </ul>
-                            </p>
+                            <ul>
+                                <li>EoSD with the English patch: <code class="blocksmall">en.js th06</code></li>
+                                <li>PCB with <a href="https://www.thpatch.net/wiki/Patch:Skipgame">Skipgame</a>: <code class="blocksmall">skipgame.js th07</code></li>
+                                <li>MoF with user-made config: <code class="blocksmall">yourpatch.js th10</code></li>
+                            </ul>
+                        </p>
                         </li>
                         <li>Ensure the working directory is the folder that contains <code>thcrap_loader.exe</code>.</li>
                         <li>Press the save button and run your game for testing.
@@ -205,8 +205,8 @@
                             </ul>
                         </li>
                     </ol>
-                    <p>* You can find all of your installed patches in the <code>config</code> folder in the <code>thcrap</code> folder.</p></p>
-                    <p><sup>†</sup> Game names are located in the <code>config</code> folder in the <code>thcrap</code> folder</p>
+                <p>* You can find all of your installed patches in the <code>config</code> folder in the <code>thcrap</code> folder.</p></p>
+                <p><sup>†</sup> Game names are located in the <code>config</code> folder in the <code>thcrap</code> folder</p>
         <hr class="light">
         <h1>Running from the Command Line</h1>
             <p>For those comfortable with the terminal. Skip to this section if you do not want to use Lutris.</p>
