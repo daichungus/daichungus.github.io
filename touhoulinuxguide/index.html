@@ -268,8 +268,14 @@
                     </table>
                     </pre>
                 </li>
-                <li>Copy/cut the appropriate <code>.dll</code>, <code>vpatch.exe</code>, and <code>vpatch.ini</code> into your Touhou game's folder.</li>
+                <li>Copy/cut the appropriate <code>.dll</code>*, <code>vpatch.exe</code>, and <code>vpatch.ini</code> into your Touhou game's folder.
+                    <p>Alternatively, use the command: 
+                        <pre><code class="block">cp /your/path/to/vpatch/vpatch_XX/{vpatch.exe, vpatch.ini, vpatch_thXX.dll} /your/path/to/Touhou/thXX</code></pre>
+                    </p>
+                </li>
+                <li>Rename the Touhou game's<sup style="color:red">*</sup> exe to <code>thXX.exe</code>.</li>
             </ol>
+            <p><b style="color:red"><sup>*</sup>For EoSD, you must rename the exe to <code class="blocksmall">東方紅魔郷.exe</code> for vpatch to be applied.</b></p>
         <hr class="light">
         <h1 id="running-touhou">Running the Touhou games</h1>
             <p>Please note the following:
