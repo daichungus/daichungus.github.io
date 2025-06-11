@@ -173,18 +173,6 @@
                     <li>For Runner options, use System wine.</li>
                     <li>Press the save button and ensure your game is running.</li>
                 </ol>
-                <!--
-                <h3>Directly using Wine (less easy, but quicker)</h3>
-                    <ol>
-                        <li>Run this command, substituting <code>thXX.exe</code> with the exe of your game:
-                            <pre><code>wine /your/path/to/Touhou/thXX/thXX.exe</code></pre>
-                        </li>
-                        <li>Alternatively, run these commands in order:
-                            <pre><code>cd /your/path/to/Touhou/thXX/</code></pre>
-                            <pre><code>wine thXX.exe</code></pre>
-                        </li>
-                    </ol>
-                -->
             <h2>Running Touhou with Vsync patches</h2>
                 <p>Follow this section if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a> <b>WITHOUT THCRAP PATCHES</b>.</p>
                 <p>While Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
@@ -220,8 +208,17 @@
                     <p>* You can find all of your installed patches in the <code>config</code> folder in the <code>thcrap</code> folder.</p></p>
                     <p><sup>†</sup> Game names are located in the <code>config</code> folder in the <code>thcrap</code> folder</p>
         <hr class="light">
-        <h1>Post-Setup Tweaks</h1>
-            <i>This section is under construction.</i>
+        <h1>Running from the Command Line</h1>
+            <p>For those comfortable with the terminal. Skip to this section if you do not want to use Lutris.</p>
+            <h2>Running the THCRAP configuration tool</h2>
+                <p>Use the Wine prefix you created for THCRAP earlier. Run:<pre><code class="block">WINEPREFIX=~/.wine-thcrap wine /your/path/to/thcrap/thcrap.exe</code></pre></p>
+            <h2>Running the Touhou games</h2>
+            <h3>Vanilla Touhou (no patches)</h3>
+                <p>Replace <code>thXX.exe</code> with the executable for your specific game: <pre><code class="block">wine /your/path/to/Touhou/thXX/thXX.exe</code></pre></p>
+            <h3>Touhou with Vsync patches (vpatch)</h3>
+                <p>Same as above, but use <code>vpatch.exe</code> instead: <pre><code class="block">wine /your/path/to/Touhou/thXX/vpatch.exe</code></pre></p>
+            <h3>Touhou with THCRAP patches</h3>
+                <p>Replace <code>example.js</code> with your patch config, and <code>thXX</code> with your game's ID: <pre><code class="block">wine /your/path/to/thcrap/thcrap_loader.exe example.js thXX</code></pre></p>
         <hr class="light">
         <h1>Post-Setup Troubleshooting</h1>
             <i>This section is under construction.</i>
