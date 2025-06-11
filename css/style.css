@@ -19,6 +19,10 @@ a:visited {
   color: purple;
 }
 
+table, th, td {
+  border: 1px solid black;
+} 
+
 /* Code text classes */
 .block {
   display: inline-block;
@@ -61,6 +65,10 @@ a:visited {
   code {
     color: white;
   }
+
+  table, th, td {
+    border: 1px solid white;
+  } 
 
   .block {
     display: inline-block;
