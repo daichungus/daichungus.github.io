@@ -142,7 +142,7 @@
                         </ol>
                     </li>
                     <li>Choose the most convenient location for the patch's shortcut<sup>‡</sup> to be created in.</li>
-                    <li>Run the shortcut with Wine, or skip to the "Running with existing THCRAP patches" section</li>
+                    <li>You can now <a href="#running-touhou">run your Touhou game</a> with the installed patch.</li>
                 </ol>
                 <p>* It may take a few seconds for the patch list when you click on the "All patches" tab. This is normal behavior.</p>
                 <p><b style="color:red"><sup>†</sup> It is highly recommended that the thcrap folder be placed in the same directory as your Touhou games.</b></p>
@@ -174,7 +174,6 @@
                 <p>Skip to <a href="#running-touhou-cli">this section</a> if you don't to use Lutris.</p>
                 <h3 id="vanilla-touhou-lutris">Vanilla Touhou (no patches)</h3>
                     <p>Follow this section if you want to play without THCRAP patches or vpatch.</p>
-                    <!--<h3>Using Lutris (easy and recommended for most users)</h3>-->
                     <ol>
                         <li>Open Lutris, then add "locally installed game".</li>
                         <li>In the Game info tab:
@@ -185,24 +184,26 @@
                         </li>
                         <li>In the Game options tab:
                             <ol>
-                                <li>Set the executable path to <code>/your/path/to/Touhou/thXX/thXX.exe</code></li>
-                                <li>Set the working directory path to <code>/your/path/to/Touhou/thXX/</code></li>
-                                <li>Set the Wine prefix path to <code>~/.wine</code></li>
+                                <li>Set the executable path to <code class="blocksmall">/your/path/to/Touhou/thXX/thXX.exe</code></li>
+                                <li>Set the working directory path to <code class="blocksmall">/your/path/to/Touhou/thXX/</code></li>
+                                <li>Set the Wine prefix path to <code class="blocksmall">~/.wine</code></li>
                             </ol>
                         </li>
                         <li>For Runner options, use System wine.</li>
                         <li>Press the save button and ensure your game is running.</li>
                     </ol>
                 <h3 id="vpatch-touhou-lutris">Touhou with Vsync patch (vpatch)</h3>
-                    <p>Follow this section if you want to play with <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">Vsync patches</a>.</p>
-                    <p>Vsync patch is not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
+                    <p>Follow this section if you want to play with Vsync patches <a href="https://en.touhouwiki.net/wiki/Game_Tools_and_Modifications#Vsync_Patches">(download and info here)</a>.</p>
+                    <p>Vsync patches are not required for reducing input lag on Linux, it adds QoL features such as window resizing and fast-forwarding replays</p>
                     <ol>
-                        <li>Repeat the same first few steps as running vanilla Touhou.</li>
-                        <li>Locate <code>vpatch.exe</code>* for the executable path. The executable, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> file should be in the same directory as the game you want to add.</li>
+                        <li>Repeat the same <a href="#vanilla-touhou-lutris">first few steps</a> as running vanilla Touhou.</li>
+                        <li>Set the executable* path to <code class="blocksmall">/your/path/to/Touhou/thXX/vpatch.exe</code></li>
                         <li>Continue with the same steps as running vanilla Touhou.</li>
-                        <li>Press the save button and ensure your game is running. If you changed the window size in <code>vpatch.ini</code>, the game's window should be that size.</li>
+                        <li>Press the save button and ensure your game is running.<sup>‡</sup></li>
                     </ol>
                     <p>* The vanilla exe of EoSD should be renamed to <code class="blocksmall">東方紅魔郷.exe</code> for <code>vpatch.exe</code> to work properly</p>
+                    <p><sup>†</sup> <code>vpatch.exe</code>, <code>vpatch.ini</code>, and the appropriate <code>vpatch_thXX.dll</code> files should all be in the same directory as the game you want to add.</p>
+                    <p><sup>‡</sup> If you changed the window size in <code>vpatch.ini</code> and the game is set to windowed, the game's window should be that size.</li></p>
                 <h3 id="thcrap-touhou-lutris">Touhou with THCRAP patches</h3>
                     <p>Follow this section if you already have downloaded THCRAP patches. (e.g. moving your games from Windows)</p>
                         <ol>
