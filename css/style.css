@@ -103,6 +103,7 @@ th, td {
 /* Classic boring HTML font */
 .classic {
   font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1em
 }
 
 /* For last updated stuff */
