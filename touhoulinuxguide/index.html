@@ -354,14 +354,37 @@
                 </p>
         <hr class="light">
         <h1 id="common-issues">Common Issues</h1>
+            <p>For more information, refer to <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Wine_tips#Fixing">this guide</a>.</p>
             <h2>EoSD displays error windows at startup</h2>
-                <p>Refer to these guides for help: *
-                    <ul>
-                        <li><a href="https://maribelhearn.com/faq/eosd">Maribel Hearn</a> | EoSD - Frequently Asked Questions</li>
-                        <li><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download#HALP!_My_Embodiment_of_Scarlet_Devil_runs_like_a_Tengu_jet_fighter_on_steroids!!">THCRAP Wiki</a> | Read if EoSD is running too fast</li>
-                    </ul>
+                <p>Refer to <a href="https://maribelhearn.com/faq/eosd">this guide</a> for help
+            <h2>Fullscreen Issues</h2>
+                <p>These two issues usually happen when running the Touhou games with regular/system Wine. 
+                    A good alternative runner is GE-Proton, which should have little to no issues with the Lutris setup as outlined in this guide.
                 </p>
-                <p>* Do keep in mind these guides assume you are using Windows.</p>
+                <h3>Not upscaling/in corner</h3>
+                    <p>This mainly affects <a href="https://en.wikipedia.org/wiki/Desktop_environment">desktop environments</a> that use <a href="https://wayland.freedesktop.org/">Wayland</a>. 
+                        Currently there are no solutions besides switching to an Xorg session in the login screen.
+                    </p>
+                <h3>Stretched out</h3>
+                    <p>Typically happens when you enable DXVK in original Wine. Fixes the non-up-scaling issue but also causes stretched visuals with that runner.</p>
+            <h2>Strange text</h2>
+                <h3>Missing text/tofu (⍰⍰⍰⍰)</h3>
+                    <p>Install cjkfonts using winetricks: <pre><code class="block">wine winetricks cjkfonts</code></pre></p>
+                <h3>Mojibake (“Œ•û)</h3>
+                    <p>
+                        <ol>
+                            <li>Verify that your system has a suitable Japanese locale
+                                <ul>
+                                    <li>This will list all existing Japanese locales:<pre><code class="block">locale -a | grep ja_JP</code></pre></li>
+                                    <li>If you don't see <code class="blocksmall">ja_JP.utf8</code> on this list, look up how to install new locales on your OS/distro.</li>
+                                </ul>
+                            </li>
+                            <pre></pre>
+                            <li>Use the Japanese locale whenever you run Touhou games and installers through Wine via command line.
+                                <p>Add this at the start of your command: <pre><code class="block">LANG=ja_JP.UTF-8</code></pre></p>
+                            </li>
+                        </ol>
+                    </p>
         <hr class="light">
         <h1 id="additional-resources-references">Additional Resources and References</h1>
             <ul>
