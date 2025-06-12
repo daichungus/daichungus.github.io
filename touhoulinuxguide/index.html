@@ -344,14 +344,13 @@
                     <p><sup>†</sup> Game names are located in the <code>config</code> folder in the <code>thcrap</code> folder</p>
             <h2 id="running-touhou-cli">Running from the Command Line</h2>
                 <h3 id="vanilla-touhou-cli">Vanilla Touhou (no patches) *</h3>
-                    <p>Replace <code>thXX.exe</code> with the executable for your specific game: <pre><code class="block">wine /your/path/to/Touhou/thXX/thXX.exe</code></pre></p>
+                    <p>Replace <code>thXX.exe</code> with the executable for your specific game: <pre><code class="block">LANG=ja_JP.UTF-8 wine start /unix /your/path/to/Touhou/thXX/thXX.exe</code></pre></p>
                 <h3 id="vpatch-touhou-cli">Touhou with Vsync patches (vpatch) *</h3>
-                    <p>Same as above, but use <code>vpatch.exe</code> instead: <pre><code class="block">wine /your/path/to/Touhou/thXX/vpatch.exe</code></pre></p>
+                    <p>Same as above, but use <code>vpatch.exe</code> instead: <pre><code class="block">LANG=ja_JP.UTF-8 wine start /unix  /your/path/to/Touhou/thXX/vpatch.exe</code></pre></p>
                 <h3 id="thcrap-touhou-cli">Touhou with THCRAP patches</h3>
                     <p>Replace <code>example.js</code> with your patch config, and <code>thXX</code> with your game's ID: <pre><code class="block">wine /your/path/to/thcrap/thcrap_loader.exe example.js thXX</code></pre></p>
                 <p>* Due to how EoSD (th06) handles encoding and locale, running it directly from the command line
-                    is not currently reliable. Issues with mojibake, font rendering, or outright failure to launch are common.
-                    Use Lutris or thcrap for better compatibility.
+                    requires <code class="blocksmall">LANG=ja_JP.UTF-8 wine start /unix</code> before the path to it.
                 </p>
         <hr class="light">
         <h1 id="common-issues">Common Issues</h1>
