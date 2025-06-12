@@ -72,11 +72,11 @@
             <h2 id="wine-mono-thcrap-setup">Setting up Wine and Mono for THCRAP</h2>
                 <ol>
                     <li>Create a new Wine prefix with the following command:
-                        <pre><code class="block">WINEPREFIX=~/.wine-thcrap WINEARCH=win64 winecfg</code></pre>
+                        <pre><code class="block">WINEPREFIX=$HOME/.wine-thcrap WINEARCH=win64 winecfg</code></pre>
                     </li>
                     <li><a href="https://dl.winehq.org/wine/wine-mono/">Download</a> the latest version of Mono*. Use <a href="https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Mono#prefix-local-install">this guide</a> to find the version you need.</li>
                     <li>Run the following command to install Mono to your newly-created prefix<sup>†</sup>:
-                        <pre><code class="block">WINEPREFIX=~/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></pre>
+                        <pre><code class="block">WINEPREFIX=$HOME/.wine-thcrap wine /path/to/wine-mono-VERSION-x86.msi</code></pre>
                         (substitute the actual version number for <code>VERSION</code>)
                     </li>
                 </ol>
@@ -92,7 +92,7 @@
                     <ul>
                         <li>Use a GUI-based archive manager. Usually included with your distro. (Ark, File Roller, Engrampa, etc.)</li>
                         <li>Use the <code>unzip</code> command. You may have to install it with your package manager. An example command in use is shown below:
-                            <pre><code class="block">unzip thcrap.zip -d ~/yourname/Downloads/thcrap</code></pre>
+                            <pre><code class="block">unzip thcrap.zip -d $HOME/yourname/Downloads/thcrap</code></pre>
                         </li>
                     </ul>
                 </ol>
@@ -109,7 +109,7 @@
                             <ol>
                                 <li>Set the executable path to <code>/your/path/to/thcrap/thcrap.exe</code> *</li>
                                 <li>Set the working directory path to <code>/your/path/to/thcrap/</code></li>
-                                <li>Set the Wine prefix path to <code>~/.wine-thcrap</code></li>
+                                <li>Set the Wine prefix path to <code>$HOME/.wine-thcrap</code></li>
                             </ol>
                         </li>
                         <li>Use System wine for the Runner option.</li>
@@ -119,7 +119,7 @@
                     Meanwhile, <code>thcrap_loader.exe</code> is the actual program that applies patches to the Touhou games.
                     </p>
                 <h3 id="thcrap-config-tool-cli">Using the command line</h3>
-                    <p>Use the Wine prefix you created for THCRAP earlier. Run:<pre><code class="block">WINEPREFIX=~/.wine-thcrap wine /your/path/to/thcrap/thcrap.exe</code></pre></p></p>
+                    <p>Use the Wine prefix you created for THCRAP earlier. Run:<pre><code class="block">WINEPREFIX=$HOME/.wine-thcrap wine /your/path/to/thcrap/thcrap.exe</code></pre></p></p>
             <h2 id="installing-patches-with-thcrap">Installing patches with the THCRAP configuration tool</h2>
                 <ol>
                     <li>Run the THCRAP configuration tool via Lutris.</li>
@@ -170,7 +170,7 @@
                     <ul>
                         <li>Use a GUI-based archive manager. Usually included with your distro. (Ark, File Roller, Engrampa, etc.)</li>
                         <li>Use the <code>unzip</code> command. An example command in use is shown below:
-                            <pre><code class="block">unzip vpatch.zip -d ~/yourname/Downloads/vpatch</code></pre>
+                            <pre><code class="block">unzip vpatch.zip -d $HOME/yourname/Downloads/vpatch</code></pre>
                         </li>
                     </ul>
                 </li>
@@ -304,7 +304,7 @@
                             <ol>
                                 <li>Set the executable path to <code class="blocksmall">/your/path/to/Touhou/thXX/thXX.exe</code></li>
                                 <li>Set the working directory path to <code class="blocksmall">/your/path/to/Touhou/thXX/</code></li>
-                                <li>Set the Wine prefix path to <code class="blocksmall">~/.wine</code></li>
+                                <li>Set the Wine prefix path to <code class="blocksmall">$HOME/.wine</code></li>
                             </ol>
                         </li>
                         <li>In the Runner options tab, use System wine.</li>
