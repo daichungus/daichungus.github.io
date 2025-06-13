@@ -355,24 +355,49 @@
                     requires <code class="blocksmall">LANG=ja_JP.UTF-8 wine start /unix</code> before the path to it.
                 </p>
         <hr class="light">
+        <h1 id="backing-up-data">Backing up your save data</h1>
+            
+            <h2>Older Windows (th06 - th12)</h2>
+                <p><a href="#relevant-save-data">All save data files</a> are located in the same folder as the game. *</p>
+                <p>* Or techically, wherever the game's .exe was last ran.</p>
+            <h2>Newer Windows (th12.5 - )</h2>
+                <p><p>Starting with DS (<code>th125)</code>, all save data is stored in <code class="blocksmall">AppData/Roaming/ShanghaiAlice</code></p></p>
+                <ol>
+                    <li>Locate the Wine prefix you used to run the game (usually located in your home folder as <code>.wine</code>)</li>
+                    <li>Navigate to <code class="blocksmall">drive_c/users/yourname/AppData/Roaming/ShanghaiAlice</code> in your Wine prefix</li>
+                    <li>Open your Touhou game folder, then copy or move all <a href="#relevant-save-data">relevant files</a> to a safe place. *</li>
+                </ol>
+            <p>* It is recommended to copy the files to the location of the actual game for organizational purposes.</p>
+            <h2 id="relevant-save-data">Relevant files</h2>
+                <p>Make sure to keep these files safe.
+                    <ul>
+                        <li><code class="blocksmall">score.dat</code>*: Your saved scores and unlocks</li>
+                        <li><code class="blocksmall">thXX_XX.rpy</code>: Replay files, located in the <code>replay</code> folder</li>
+                        <li><code class="blocksmall">thXX.cfg</code><sup>†</sup>: Your game settings (e.g. fullscreen vs windowed)</li>
+                        <li>Screenshots taken in-game with the Home key are located in the <code>snapshot</code> folder.</li>
+                    </ul>
+                </p>
+                <p>* <code>scorethXX.dat</code> starting with StB (<code>th095</code>)</p>
+                <p><sup>†</sup> It's normal for the cfg file of EoSD to appear as <code class="blocksmall">“Œ•ûg–‚‹½.cfg</code></p>
+        <hr class="light">
         <h1 id="common-issues">Common Issues</h1>
             <p>For more information, refer to <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Wine_tips#Fixing">this guide</a>.</p>
-            <h2>EoSD displays error windows at startup</h2>
+            <h2 id="common-issues-eosd">EoSD displays error windows at startup</h2>
                 <p>Refer to <a href="https://maribelhearn.com/faq/eosd">this guide</a> for help
-            <h2>Fullscreen Issues</h2>
+            <h2 id="common-issues-fullscreen">Fullscreen Issues</h2>
                 <p>These two issues usually happen when running the Touhou games with regular/system Wine. 
                     A good alternative runner is GE-Proton, which should have little to no issues with the Lutris setup as outlined in this guide.
                 </p>
-                <h3>Not upscaling/in corner</h3>
+                <h3 id="common-issues-fullscreen-not-upscale">Not upscaling/in corner</h3>
                     <p>This mainly affects <a href="https://en.wikipedia.org/wiki/Desktop_environment">desktop environments</a> that use <a href="https://wayland.freedesktop.org/">Wayland</a>. 
                         Currently there are no solutions besides switching to an Xorg session in the login screen.
                     </p>
-                <h3>Stretched out</h3>
+                <h3 id="common-issues-fullscreen-stretched">Stretched out</h3>
                     <p>Typically happens when you enable DXVK in original Wine. Fixes the non-up-scaling issue but also causes stretched visuals with that runner.</p>
-            <h2>Strange text</h2>
-                <h3>Missing text/tofu (⍰⍰⍰⍰)</h3>
+            <h2 id="common-issues-strange-text">Strange text</h2>
+                <h3 id="common-issues-tofu">Missing text/tofu (⍰⍰⍰⍰)</h3>
                     <p>Install cjkfonts using winetricks: <pre><code class="block">wine winetricks cjkfonts</code></pre></p>
-                <h3>Mojibake (“Œ•û)</h3>
+                <h3 id="common-issues-mojibake">Mojibake (“Œ•û)</h3>
                     <p>
                         <ol>
                             <li>Verify that your system has a suitable Japanese locale
