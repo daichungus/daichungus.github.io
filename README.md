@@ -1,3 +1,5 @@
-Personal website
+Personal website.
 
-If you are here, you are probably looking for the Touhou Linux guide.
+[Touhou Linux guide has been moved to its own repo.](https://daichungus.github.io/touhoulinuxguide)
+
+Otherwise don't expect too much updates from this site.
