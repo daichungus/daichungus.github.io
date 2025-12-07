@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://daichungus.github.io/sitemap.xml
-Sitemap: https://daichungus.github.io/touhoulinuxguide/sitemap.xml
